@@ -92,7 +92,7 @@ namespace Mvc
         public AppHost()
             : base("ServiceStack + .NET Core", typeof(MyServices).GetTypeInfo().Assembly)
         {
-            var liveSettings = MapProjectPath("~/appsettings.txt");
+            var liveSettings = MapProjectPath("/etc/secret-volume/authprovidersetting");
             AppSettings = File.Exists(liveSettings)
                 ? (IAppSettings)new TextFileSettings(liveSettings)
                 : new AppSettings();
